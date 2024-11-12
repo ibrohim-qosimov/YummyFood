@@ -31,7 +31,7 @@ namespace YummyFood.Application.UseCases.SpecialOffer.Handlers
                     promo.Title = request.Title;
                     promo.Subtitle = request.Subtitle;
                     _context.SpecialOffers.Update(promo);
-                    _context.SaveChangesAsync();
+                   await  _context.SaveChangesAsync();
                     return new ResponseModel()
                     {
                         Message = "Promo update",

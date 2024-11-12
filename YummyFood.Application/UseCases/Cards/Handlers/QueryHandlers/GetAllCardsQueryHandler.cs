@@ -17,6 +17,7 @@ namespace YummyFood.Application.UseCases.Cards.Handlers.QueryHandlers
 
         public async Task<IEnumerable<Card>> Handle(GetAllCardsQuery request, CancellationToken cancellationToken)
         {
+           
             return await _context.Cards.ToListAsync(cancellationToken);
         }
     }

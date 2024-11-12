@@ -32,8 +32,8 @@ namespace YummyFood.Application.UseCases.SpecialOffer.Handlers
                         Title = request.Title,
                        Subtitle = request.Subtitle,
                     };
-                    _context.SpecialOffers.Add(promo);
-                    _context.SaveChangesAsync();
+                     await _context.SpecialOffers.AddAsync(promo);
+                     await  _context.SaveChangesAsync();
                     return new ResponseModel()
                     {
                         Message = "PromoCreated",
