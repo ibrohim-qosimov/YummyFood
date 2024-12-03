@@ -23,7 +23,8 @@ namespace YummyFood.Application.UseCases.Categories.Handlers
 
         public async Task<IEnumerable<Category>> Handle(GetAllCategoriesQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Categories.Include(x => x.Products).ToListAsync(cancellationToken);
+            return await _context.Categories.Include(x=>x.Products).ToListAsync(cancellationToken);
+           
         }
     }
 }

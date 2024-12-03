@@ -24,12 +24,19 @@ namespace YummyFood.Application.UseCases.Cards.Handlers.CommandHandlers
                 {
                     var card = new Card()
                     {
-                        Number = request.Number,
-                        Expired = request.Expired,
-                        CVV = request.CVV,
-                        UserId = request.UserId,
-                        CreatedAt = DateTimeOffset.UtcNow
+                      
+
+                        Number= request.Number,
+                        Expired= request.Expired,
+                        CVV= request.CVV,
+                        UserId= request.UserId,
+                        CreatedAt=DateTimeOffset.UtcNow,
+
+
+                        
                     };
+
+                    
 
                     await _context.Cards.AddAsync(card, cancellationToken);
                     await _context.SaveChangesAsync(cancellationToken);

@@ -23,6 +23,8 @@ namespace YummyFood.Application.UseCases.Cards.Handlers.CommandHandlers
             {
                 if (request != null)
                 {
+                  
+
                     card.Number = request.Number;
                     card.Expired = request.Expired;
                     card.CVV = request.CVV;
@@ -35,9 +37,11 @@ namespace YummyFood.Application.UseCases.Cards.Handlers.CommandHandlers
                     return new ResponseModel()
                     {
                         IsSuccess = true,
-                        Message = "Successfully Updated",
-                        StatusCode = 200,
+                        Message = "Successfull",
+                        StatusCode = 200
+
                     };
+
                 }
                 else
                 {

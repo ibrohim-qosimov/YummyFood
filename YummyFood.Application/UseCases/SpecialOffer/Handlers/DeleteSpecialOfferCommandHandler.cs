@@ -21,15 +21,15 @@ namespace YummyFood.Application.UseCases.SpecialOffer.Handlers
             _context = context;
         }
 
-        public async Task<ResponseModel> Handle(DeleteSpecialOfferCommand request, CancellationToken cancellationToken)
+        public  async Task<ResponseModel> Handle(DeleteSpecialOfferCommand request, CancellationToken cancellationToken)
         {
             try
             {
                 if (request != null)
                 {
-                    var promo = _context.SpecialOffers.FirstOrDefaultAsync(x => x.Id == request.Id).Result;
+                    var promo =  _context.SpecialOffers.FirstOrDefaultAsync(x => x.Id == request.Id).Result;
                     _context.SpecialOffers.Remove(promo);
-                    _context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                     return new ResponseModel()
                     {
                         Message = "Promo deleted",
